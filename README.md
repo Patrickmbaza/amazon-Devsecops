@@ -529,7 +529,7 @@ aws configure list
 ```bash
 eksctl create cluster \
   --name my-cluster \
-  --region ap-south-1 \
+  --region us-east-1 \
   --version 1.33 \
   --without-nodegroup
 
@@ -550,7 +550,7 @@ eksctl create nodegroup \
 ## 7. Update kubeconfig
 
 ```bash
-aws eks update-kubeconfig --name my-cluster --region ap-south-1
+aws eks update-kubeconfig --name my-cluster --region us-east-1
 ```
 
 ---
@@ -588,7 +588,7 @@ eksctl create iamserviceaccount \
   --name=aws-load-balancer-controller \
   --attach-policy-arn=arn:aws:iam::<ACCOUNT_ID>:policy/AWSLoadBalancerControllerIAMPolicy \
   --override-existing-serviceaccounts \
-  --region ap-south-1 \
+  --region us-east-1 \
   --approve
 ```
 
@@ -604,7 +604,7 @@ helm install aws-load-balancer-controller eks/aws-load-balancer-controller -n ku
   --set clusterName=my-cluster \
   --set serviceAccount.create=false \
   --set serviceAccount.name=aws-load-balancer-controller \
-  --set region=ap-south-1 \
+  --set region=us-east-1 \
   --version 1.13.3
 ```
 
@@ -639,7 +639,7 @@ kubectl delete -f .
 ## 13. Delete EKS Cluster (Cleanup)
 
 ```bash
-eksctl delete cluster --name my-cluster --region ap-south-1
+eksctl delete cluster --name my-cluster --region us-east-1
 ```
 ## End up here if you tired
 ---
